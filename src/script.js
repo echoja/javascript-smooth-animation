@@ -205,9 +205,9 @@ const def = new Map([
     },
   ],
   [
-    "wave",
+    "moving-background",
     {
-      id: "wave",
+      id: "moving-background",
       top: 4500,
       bottom: 5900,
       topStyle: {
@@ -400,7 +400,7 @@ const elements = {
   slide1: document.getElementById("slide1"),
   slide2: document.getElementById("slide2"),
   slide3: document.getElementById("slide3"),
-  wave: document.getElementById("wave"),
+  "moving-background": document.getElementById("moving-background"),
   slide4: document.getElementById("slide4"),
   slide5: document.getElementById("slide5"),
 };
@@ -449,7 +449,7 @@ function onScroll() {
 
     // enable 순회중, 범위 내부에 제대로 있다면 각 애니메이션 적용시키기.
     else {
-      applyAllAnimation(currentPos, id);
+      applyAnimations(currentPos, id);
     }
   });
 }
@@ -459,10 +459,6 @@ window.addEventListener("scroll", onScroll);
 function initAnimation() {
   // Sticky Conainer 의 높이를 설정함.
   elements["sticky-container"].style.height = `7100px`;
-
-  // disabled, enabled 를 비움.
-  disabled.clear();
-  enabled.clear();
 
   // 모든 요소를 disabled 에 넣음.
   def.forEach((obj, id) => {
@@ -487,13 +483,13 @@ initAnimation();
 /**
  *
  * @param {string} id
- * @param {*} styles
- * @param {number} r
+ * @param {any[]} styles
+ * @param {number} rate
  */
-function applyStyles(id, styles, r) {
+function applyStyles(id, styles, rate) {
   styles.forEach((style) => {
     const { name, topValue, bottomValue } = style;
-    const value = getPoint(topValue, bottomValue, r);
+    const value = getPoint(topValue, bottomValue, rate);
     applyStyle(elements[id], name, value);
   });
 }
@@ -503,7 +499,7 @@ function applyStyles(id, styles, r) {
  * @param {number} currentPos
  * @param {string} id
  */
-function applyAllAnimation(currentPos, id) {
+function applyAnimations(currentPos, id) {
   const animations = def.get(id)?.animations;
   if (!animations) {
     return;
