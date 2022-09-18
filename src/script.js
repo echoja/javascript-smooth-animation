@@ -1,4 +1,5 @@
 // @ts-check
+// @ts-ignore
 import bezierEasing from "https://cdn.skypack.dev/bezier-easing@2.1.0";
 
 const ease = bezierEasing(0.25, 0.1, 0.25, 1.0);
@@ -378,7 +379,7 @@ function getPoint(top, bottom, rate) {
 /**
  * DOM 요소에 스타일을 적용하는 함수
  * @param {HTMLElement} element
- * @param {string} styleName
+ * @param {*} styleName
  * @param {number} value
  */
 function applyStyle(element, styleName, value) {
@@ -390,10 +391,10 @@ function applyStyle(element, styleName, value) {
     element.style.transform = `translateX(${value}px)`;
     return;
   }
-  element.style[styleName] = value;
+  element.style[styleName] = `${value}`;
 }
 
-/** @type {{[key: string]: HTMLElement}} */
+/** @type {{[key: string]: any}} */
 const elements = {
   "sticky-container": document.getElementById("sticky-container"),
   "scroll-down": document.getElementById("scroll-down"),
