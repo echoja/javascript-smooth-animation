@@ -5,10 +5,11 @@ const ease = bezierEasing(0.25, 0.1, 0.25, 1.0);
 const easeIn = bezierEasing(0.38, 0.01, 0.78, 0.13);
 const midSlow = bezierEasing(0, 0.7, 1, 0.3);
 
-const def = {
-  height: 7100,
-  elements: {
-    slide1: {
+const def = new Map([
+  [
+    "slide1",
+    {
+      id: "slide1",
       top: 500,
       bottom: 1900,
       topStyle: {
@@ -19,8 +20,53 @@ const def = {
         opacity: 0,
         translateY: 60,
       },
+      animations: [
+        {
+          enabled: false,
+          top: 500,
+          bottom: 1900,
+          easing: midSlow,
+          styles: [
+            {
+              name: "translateY",
+              topValue: 60,
+              bottomValue: -60,
+            },
+          ],
+        },
+        {
+          enabled: false,
+          top: 500,
+          bottom: 800,
+          easing: ease,
+          styles: [
+            {
+              name: "opacity",
+              topValue: 0,
+              bottomValue: 1,
+            },
+          ],
+        },
+        {
+          enabled: false,
+          top: 1400,
+          bottom: 1900,
+          easing: easeIn,
+          styles: [
+            {
+              name: "opacity",
+              topValue: 1,
+              bottomValue: 0,
+            },
+          ],
+        },
+      ],
     },
-    "scroll-down": {
+  ],
+  [
+    "scroll-down",
+    {
+      id: "scroll-down",
       top: 0,
       bottom: 1000,
       topStyle: {
@@ -29,8 +75,27 @@ const def = {
       bottomStyle: {
         opacity: 0,
       },
+      animations: [
+        {
+          enabled: false,
+          top: 600,
+          bottom: 1000,
+          easing: easeIn,
+          styles: [
+            {
+              name: "opacity",
+              topValue: 1,
+              bottomValue: 0,
+            },
+          ],
+        },
+      ],
     },
-    slide2: {
+  ],
+  [
+    "slide2",
+    {
+      id: "slide2",
       top: 1900,
       bottom: 3200,
       topStyle: {
@@ -41,8 +106,53 @@ const def = {
         opacity: 0,
         translateY: 60,
       },
+      animations: [
+        {
+          enabled: false,
+          top: 1900,
+          bottom: 3200,
+          easing: midSlow,
+          styles: [
+            {
+              name: "translateY",
+              topValue: 60,
+              bottomValue: -60,
+            },
+          ],
+        },
+        {
+          enabled: false,
+          top: 1900,
+          bottom: 2500,
+          easing: ease,
+          styles: [
+            {
+              name: "opacity",
+              topValue: 0,
+              bottomValue: 1,
+            },
+          ],
+        },
+        {
+          enabled: false,
+          top: 2600,
+          bottom: 3200,
+          easing: easeIn,
+          styles: [
+            {
+              name: "opacity",
+              topValue: 1,
+              bottomValue: 0,
+            },
+          ],
+        },
+      ],
     },
-    slide3: {
+  ],
+  [
+    "slide3",
+    {
+      id: "slide3",
       top: 3300,
       bottom: 4600,
       topStyle: {
@@ -51,8 +161,53 @@ const def = {
       bottomStyle: {
         opacity: 0,
       },
+      animations: [
+        {
+          enabled: false,
+          top: 3300,
+          bottom: 4600,
+          easing: midSlow,
+          styles: [
+            {
+              name: "translateY",
+              topValue: 60,
+              bottomValue: -60,
+            },
+          ],
+        },
+        {
+          enabled: false,
+          top: 3300,
+          bottom: 3900,
+          easing: ease,
+          styles: [
+            {
+              name: "opacity",
+              topValue: 0,
+              bottomValue: 1,
+            },
+          ],
+        },
+        {
+          enabled: false,
+          top: 4000,
+          bottom: 4600,
+          easing: easeIn,
+          styles: [
+            {
+              name: "opacity",
+              topValue: 1,
+              bottomValue: 0,
+            },
+          ],
+        },
+      ],
     },
-    wave: {
+  ],
+  [
+    "wave",
+    {
+      id: "wave",
       top: 4500,
       bottom: 5900,
       topStyle: {
@@ -63,8 +218,45 @@ const def = {
         opacity: 0,
         translateY: 0,
       },
+      animations: [
+        {
+          enabled: false,
+          top: 4500,
+          bottom: 5300,
+          easing: ease,
+          styles: [
+            {
+              name: "opacity",
+              topValue: 0,
+              bottomValue: 1,
+            },
+            {
+              name: "translateY",
+              topValue: 200,
+              bottomValue: 0,
+            },
+          ],
+        },
+        {
+          enabled: false,
+          top: 5300,
+          bottom: 5900,
+          easing: easeIn,
+          styles: [
+            {
+              name: "opacity",
+              topValue: 1,
+              bottomValue: 0,
+            },
+          ],
+        },
+      ],
     },
-    slide4: {
+  ],
+  [
+    "slide4",
+    {
+      id: "slide4",
       top: 4700,
       bottom: 6000,
       topStyle: {
@@ -73,8 +265,53 @@ const def = {
       bottomStyle: {
         opacity: 0,
       },
+      animations: [
+        {
+          enabled: false,
+          top: 4700,
+          bottom: 6000,
+          easing: midSlow,
+          styles: [
+            {
+              name: "translateY",
+              topValue: 60,
+              bottomValue: -60,
+            },
+          ],
+        },
+        {
+          enabled: false,
+          top: 4700,
+          bottom: 5300,
+          easing: ease,
+          styles: [
+            {
+              name: "opacity",
+              topValue: 0,
+              bottomValue: 1,
+            },
+          ],
+        },
+        {
+          enabled: false,
+          top: 5400,
+          bottom: 6000,
+          easing: easeIn,
+          styles: [
+            {
+              name: "opacity",
+              topValue: 1,
+              bottomValue: 0,
+            },
+          ],
+        },
+      ],
     },
-    slide5: {
+  ],
+  [
+    "slide5",
+    {
+      id: "slide5",
       top: 6100,
       bottom: 9000,
       topStyle: {
@@ -83,219 +320,40 @@ const def = {
       bottomStyle: {
         opacity: 0,
       },
+      animations: [
+        {
+          enabled: false,
+          top: 6100,
+          bottom: 7100,
+          easing: midSlow,
+          styles: [
+            {
+              name: "translateY",
+              topValue: 60,
+              bottomValue: -60,
+            },
+          ],
+        },
+        {
+          enabled: false,
+          top: 6100,
+          bottom: 6700,
+          easing: ease,
+          styles: [
+            {
+              name: "opacity",
+              topValue: 0,
+              bottomValue: 1,
+            },
+          ],
+        },
+      ],
     },
-  },
-  animations: {
-    slide1: [
-      {
-        top: 500,
-        bottom: 1900,
-        easing: midSlow,
-        styles: {
-          translateY: {
-            topValue: 60,
-            bottomValue: -60,
-          },
-        },
-      },
-      {
-        top: 500,
-        bottom: 800,
-        easing: ease,
-        styles: {
-          opacity: {
-            topValue: 0,
-            bottomValue: 1,
-          },
-        },
-      },
-      {
-        top: 1400,
-        bottom: 1900,
-        easing: easeIn,
-        styles: {
-          opacity: {
-            topValue: 1,
-            bottomValue: 0,
-          },
-        },
-      },
-    ],
-    "scroll-down": [
-      {
-        top: 600,
-        bottom: 1000,
-        easing: easeIn,
-        styles: {
-          opacity: {
-            topValue: 1,
-            bottomValue: 0,
-          },
-        },
-      },
-    ],
-    slide2: [
-      {
-        top: 1900,
-        bottom: 3200,
-        easing: midSlow,
-        styles: {
-          translateY: {
-            topValue: 60,
-            bottomValue: -60,
-          },
-        },
-      },
-      {
-        top: 1900,
-        bottom: 2500,
-        easing: ease,
-        styles: {
-          opacity: {
-            topValue: 0,
-            bottomValue: 1,
-          },
-        },
-      },
-      {
-        top: 2600,
-        bottom: 3200,
-        easing: easeIn,
-        styles: {
-          opacity: {
-            topValue: 1,
-            bottomValue: 0,
-          },
-        },
-      },
-    ],
-    slide3: [
-      {
-        top: 3300,
-        bottom: 4600,
-        easing: midSlow,
-        styles: {
-          translateY: {
-            topValue: 60,
-            bottomValue: -60,
-          },
-        },
-      },
-      {
-        top: 3300,
-        bottom: 3900,
-        easing: ease,
-        styles: {
-          opacity: {
-            topValue: 0,
-            bottomValue: 1,
-          },
-        },
-      },
-      {
-        top: 4000,
-        bottom: 4600,
-        easing: easeIn,
-        styles: {
-          opacity: {
-            topValue: 1,
-            bottomValue: 0,
-          },
-        },
-      },
-    ],
-    wave: [
-      {
-        top: 4500,
-        bottom: 5300,
-        easing: ease,
-        styles: {
-          translateY: {
-            topValue: 200,
-            bottomValue: 0,
-          },
-          opacity: {
-            topValue: 0,
-            bottomValue: 1,
-          },
-        },
-      },
-      {
-        top: 5300,
-        bottom: 5900,
-        easing: easeIn,
-        styles: {
-          opacity: {
-            topValue: 1,
-            bottomValue: 0,
-          },
-        },
-      },
-    ],
-    slide4: [
-      {
-        top: 4700,
-        bottom: 6000,
-        easing: midSlow,
-        styles: {
-          translateY: {
-            topValue: 60,
-            bottomValue: -60,
-          },
-        },
-      },
-      {
-        top: 4700,
-        bottom: 5300,
-        easing: ease,
-        styles: {
-          opacity: {
-            topValue: 0,
-            bottomValue: 1,
-          },
-        },
-      },
-      {
-        top: 5400,
-        bottom: 6000,
-        easing: easeIn,
-        styles: {
-          opacity: {
-            topValue: 1,
-            bottomValue: 0,
-          },
-        },
-      },
-    ],
-    slide5: [
-      {
-        top: 6100,
-        bottom: 7100,
-        easing: midSlow,
-        styles: {
-          translateY: {
-            topValue: 60,
-            bottomValue: -60,
-          },
-        },
-      },
-      {
-        top: 6100,
-        bottom: 6700,
-        easing: ease,
-        styles: {
-          opacity: {
-            topValue: 0,
-            bottomValue: 1,
-          },
-        },
-      },
-    ],
-  },
-};
+  ],
+]);
 
-let enabled = new Map();
-let disabled = new Map();
+const enabled = new Map();
+const disabled = new Map();
 
 /**
  * 해당 숫자가 `top`과 `bottom` 사이에 있는지 확인하는 함수
@@ -400,29 +458,22 @@ window.addEventListener("scroll", onScroll);
 
 function initAnimation() {
   // Sticky Conainer 의 높이를 설정함.
-  elements["sticky-container"].style.height = `${def.height}px`;
+  elements["sticky-container"].style.height = `7100px`;
 
   // disabled, enabled 를 비움.
   disabled.clear();
   enabled.clear();
 
   // 모든 요소를 disabled 에 넣음.
-  for (const id of Object.keys(def.elements)) {
-    disabled.set(id, def.elements[id]);
-  }
-
-  // 각 애니메이션을 enabled == false 로 만듬.
-  for (const id of Object.keys(def.animations)) {
-    for (const animation of def.animations[id]) {
-      animation.enabled = false;
-    }
-  }
+  def.forEach((obj, id) => {
+    disabled.set(id, obj);
+  });
 
   // 초기 스타일 적용
   disabled.forEach((obj, id) => {
     Object.keys(obj.topStyle).forEach((styleName) => {
       const pushValue = obj.topStyle[styleName];
-      elements[id].style[styleName] = pushValue;
+      applyStyle(elements[id], styleName, pushValue);
     });
   });
 
@@ -440,15 +491,11 @@ initAnimation();
  * @param {number} r
  */
 function applyStyles(id, styles, r) {
-  Object.entries(styles).forEach(([styleName, style]) => {
-    const value = getPoint(style.topValue, style.bottomValue, r);
-    applyStyle(elements[id], styleName, value);
+  styles.forEach((style) => {
+    const { name, topValue, bottomValue } = style;
+    const value = getPoint(topValue, bottomValue, r);
+    applyStyle(elements[id], name, value);
   });
-  // for (const styleName of Object.keys(styles)) {
-  //   const { topValue, bottomValue } = styles[styleName];
-  //   const calc = (bottomValue - topValue) * r + topValue;
-  //   applyStyle(elements[id], styleName, calc);
-  // }
 }
 
 /**
@@ -457,17 +504,17 @@ function applyStyles(id, styles, r) {
  * @param {string} id
  */
 function applyAllAnimation(currentPos, id) {
-  const animations = def.animations[id];
+  const animations = def.get(id)?.animations;
   if (!animations) {
     return;
   }
 
-  for (const animation of animations) {
+  animations.forEach((animation) => {
     const { top: a_top, bottom: a_bottom, easing, styles } = animation;
     const isIn = isAmong(currentPos, a_top, a_bottom);
     // 만약 애니메이션이 새롭게 들어갈 때 혹은 나갈때 enabled 설정
-    if (isIn) {
-      if (!animation.enabled) animation.enabled = true;
+    if (isIn && !animation.enabled) {
+      animation.enabled = true;
     } else if (!isIn && animation.enabled) {
       if (currentPos <= a_top) {
         applyStyles(id, styles, 0);
@@ -482,5 +529,5 @@ function applyAllAnimation(currentPos, id) {
       const rate = easing((currentPos - a_top) / (a_bottom - a_top));
       applyStyles(id, styles, rate);
     }
-  }
+  });
 }
