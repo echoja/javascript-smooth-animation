@@ -1,14 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Javascript Smooth Animation</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  
-  <script src="script.js"></script>
-</body> 
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Smooth Animation</title>
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.5/dist/web/static/pretendard.css"
+    />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="sticky-container" id="sticky-container">
+      <div class="sticky">
+        <div class="slide-container">
+          <div class="slide" id="slide1">
+            <div class="slide-big-text">
+              <p>안녕하세요.</p>
+            </div>
+          </div>
+          <div class="scroll-down" id="scroll-down">
+            <div class="scroll-down-text">아래로 스크롤하세요.</div>
+          </div>
+          <div class="slide" id="slide2">
+            <div class="slide-big-text">
+              <p>처음 뵙겠습니다.</p>
+            </div>
+          </div>
+          <div class="slide slide3" id="slide3">
+            <div class="slide-big-text">
+              <p>동쪽에서 새로운 해가</p>
+              <p>이윽고 떠올랐습니다.</p>
+            </div>
+          </div>
+          <div class="slide slide-left slide4" id="slide4">
+            <div class="slide4-content">
+              <div class="slide-big-text">
+                <p>자세한</p>
+                <p>설명이</p>
+                <p>있을 수도 있어요</p>
+              </div>
+              <div class="slide-small-text">
+                <p>그렇습니다.</p>
+                <p>이건</p>
+                <p>글씨가 좀 작습니다.</p>
+              </div>
+            </div>
+          </div>
+          <div class="wave" id="wave">뭔가 독립적으로 움직이는 배경</div>
+
+          <div class="slide slide-left slide5" id="slide5">
+            <div class="slide-big-text">
+              <p>엘바노프 스튜디오는</p>
+              <p>당신의 풍요로운</p>
+              <p>나날을 꿈꿉니다.</p>
+            </div>
+            <div class="go-surf-wrapper">
+              <a href="https://elvanov.com/2195" target="_blank"
+                >이 코드의 설명을 보려면 여기를 눌르세요.</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script type="module" src="script.js"></script>
+  </body>
 </html>
