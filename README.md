@@ -1,6 +1,6 @@
 # [Javascript] 스크롤에 따라 부드러운 애니메이션 구현하기 (Feat. iPhone SE)
 
-준비중
+<https://springfall.cc/post/10>
 
 ## Demo
 
