@@ -10,7 +10,7 @@
   },
   "devDependencies": {
     "prettier": "^2.7.1",
-    "vite": "^3.1.6"
+    "vite": "^3.1.8"
   },
   "keywords": [],
   "author": "",
