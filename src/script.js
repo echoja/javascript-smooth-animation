@@ -387,10 +387,12 @@ function applyStyle(element, styleName, value) {
     element.style.transform = `translateY(${value}px)`;
     return;
   }
+
   if (styleName === "translateX") {
     element.style.transform = `translateX(${value}px)`;
     return;
   }
+
   element.style[styleName] = `${value}`;
 }
 
@@ -430,14 +432,14 @@ function onScroll() {
     if (!isAmong(currentPos, top, bottom)) {
       // 위로 나갔다면 시작하는 스타일 적용
       if (currentPos <= top) {
-        Object.keys(topStyle).forEach((styleName) => {
-          applyStyle(elements[id], styleName, topStyle[styleName]);
+        Object.entries(topStyle).forEach(([styleName, value]) => {
+          applyStyle(elements[id], styleName, value);
         });
       }
       // 아래로 나갔다면 끝나는 스타일적용
       else if (currentPos >= bottom) {
-        Object.keys(bottomStyle).forEach((styleName) => {
-          applyStyle(elements[id], styleName, bottomStyle[styleName]);
+        Object.entries(bottomStyle).forEach(([styleName, value]) => {
+          applyStyle(elements[id], styleName, value);
         });
       }
 
@@ -482,7 +484,7 @@ function initAnimation() {
 initAnimation();
 
 /**
- *
+ * 스타일에 대해 실제 값을 계산하여 적용하는 함수
  * @param {string} id
  * @param {any[]} styles
  * @param {number} rate
@@ -496,7 +498,7 @@ function applyStyles(id, styles, rate) {
 }
 
 /**
- *
+ * 현재 스크롤 높이를 기준으로 특정 Element의 애니메이션을 모두 적용시킵니다.
  * @param {number} currentPos
  * @param {string} id
  */
@@ -512,7 +514,10 @@ function applyAnimations(currentPos, id) {
     // 만약 애니메이션이 새롭게 들어갈 때 혹은 나갈때 enabled 설정
     if (isIn && !animation.enabled) {
       animation.enabled = true;
-    } else if (!isIn && animation.enabled) {
+    }
+
+    // 만약 애니메이션 범위 밖에 있다면 enabled 해제하면서 스타일 초기화
+    else if (!isIn && animation.enabled) {
       if (currentPos <= a_top) {
         applyStyles(id, styles, 0);
       } else if (currentPos >= a_bottom) {
