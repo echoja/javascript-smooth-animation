@@ -4,7 +4,7 @@
 
 ## Demo
 
-<https://echoja.github.io/javascript-smooth-animation/>
+<https://javascript-smooth-animation.vercel.app/>
 
 ## 실행 (npm)
 
