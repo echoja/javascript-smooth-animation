@@ -2,11 +2,11 @@ lockfileVersion: 5.4
 
 specifiers:
   prettier: ^2.8.4
-  vite: ^4.1.1
+  vite: ^4.1.4
 
 devDependencies:
   prettier: 2.8.4
-  vite: 4.1.1
+  vite: 4.1.4
 
 packages:
 
@@ -319,8 +319,8 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /vite/4.1.1:
-    resolution: {integrity: sha512-LM9WWea8vsxhr782r9ntg+bhSFS06FJgCvvB0+8hf8UWtvaiDagKYWXndjfX6kGl74keHJUcpzrQliDXZlF5yg==}
+  /vite/4.1.4:
+    resolution: {integrity: sha512-3knk/HsbSTKEin43zHu7jTwYWv81f8kgAL99G5NWBcA1LKvtvcVAC4JjBH1arBunO9kQka+1oGbrMKOjk4ZrBg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
