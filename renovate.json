@@ -1,12 +1,5 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:recommended",
-    "group:allNonMajor",
-    "schedule:earlyMondays"
-  ],
-  "rangeStrategy": "bump",
-  "prHourlyLimit": 0,
-  "prConcurrentLimit": 0,
-  "updateNotScheduled": false
+  "extends": ["config:recommended"],
+  "schedule": ["on the first day of the month"]
 }
