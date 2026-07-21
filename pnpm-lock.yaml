@@ -1,11 +1,11 @@
 lockfileVersion: 5.4
 
 specifiers:
-  prettier: ^3.0.0
+  prettier: ^3.9.6
   vite: ^7.0.0
 
 devDependencies:
-  prettier: 3.7.4
+  prettier: 3.9.6
   vite: 7.3.0
 
 packages:
@@ -502,8 +502,8 @@ packages:
       source-map-js: 1.2.1
     dev: true
 
-  /prettier/3.7.4:
-    resolution: {integrity: sha512-v6UNi1+3hSlVvv8fSaoUbggEM5VErKmmpGA7Pl3HF8V6uKY7rvClBOJlH6yNwQtfTueNkGVpOv/mtWL9L4bgRA==}
+  /prettier/3.9.6:
+    resolution: {integrity: sha512-OpN0zzVdiaiAhxpuuj5efpIS4sY9j7bY6uR5mnj5yPzGkdkjNKSJeUThPb60Jw29QuAZgA4o+/iB49kFiaBX6g==}
     engines: {node: '>=14'}
     hasBin: true
     dev: true
